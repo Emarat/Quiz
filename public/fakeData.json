@@ -1,0 +1,57 @@
+[
+    {
+        "qstn": "Capital of Bangladesh is",
+        "options": [
+            "Dhaka",
+            "khulna",
+            "Bogura",
+            "None of these"
+        ],
+        "ans": "Dhaka",
+        "id": 1
+    },
+    {
+        "qstn": "How many total Districts are there in Bangladesh",
+        "options": [
+            "60",
+            "61",
+            "62",
+            "64"
+        ],
+        "ans": "64",
+        "id": 2
+    },
+    {
+        "qstn": "What is the country calling code for Bangladesh",
+        "options": [
+            "+49",
+            "+230",
+            "+880",
+            "+97"
+        ],
+        "ans": "+880",
+        "id": 3
+    },
+    {
+        "qstn": "Official language of Bangladesh is",
+        "options": [
+            "Bengali",
+            "Urdu",
+            "Arabic",
+            "Hindi"
+        ],
+        "ans": "Bengali",
+        "id": 4
+    },
+    {
+        "qstn": "How many provinces are there in Bangladesh",
+        "options": [
+            "5",
+            "6",
+            "7",
+            "8"
+        ],
+        "ans": "8",
+        "id": 5
+    }
+]
