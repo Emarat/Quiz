@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 
 const auth = getAuth();
 const SignUp = () => {
@@ -27,7 +27,7 @@ const SignUp = () => {
     }
 
 
-    const handleCreateUser = (event) => {
+    const handleCreateUser = async (event) => {
         event.preventDefault();
         if (password !== confirmPassword) {
             setError('Password Not Matched');
@@ -38,14 +38,21 @@ const SignUp = () => {
             return;
         }
 
-        createUserWithEmailAndPassword(auth, email, password)
+        await createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
 
                 const user = userCredential.user;
                 console.log(user);
-                navigate('/home');
+
             });
 
+
+        await updateProfile(auth.currentUser, {
+            displayName: name
+        }).then(() => {
+            console.log('updating');
+            navigate('/home');
+        })
 
 
     }
