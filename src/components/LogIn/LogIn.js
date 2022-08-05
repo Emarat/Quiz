@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
+const auth = getAuth();
 const LogIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     const handleEmailBlur = (event) => {
         setEmail(event.target.value);
@@ -15,6 +18,14 @@ const LogIn = () => {
 
     const handleUserSignIn = (event) => {
         event.preventDefault();
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+
+                const user = userCredential.user;
+                console.log(user);
+                navigate('/home');
+
+            })
 
     }
 
