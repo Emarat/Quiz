@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
+const auth = getAuth();
 const SignUp = () => {
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
+    const navigate = useNavigate();
 
 
 
@@ -34,6 +37,15 @@ const SignUp = () => {
             setError('Password Must be 6 Characters!')
             return;
         }
+
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+
+                const user = userCredential.user;
+                console.log(user);
+                navigate('/home');
+            });
+
 
 
     }
@@ -80,8 +92,7 @@ const SignUp = () => {
                                                 I agree all statements in Terms of service!
                                             </label>
                                         </div>
-
-
+                                        <p style={{ color: 'red' }}>{error}</p>
                                         <div>
                                             <button className="btn btn-outline-light btn-lg px-5" type="submit">SignUp</button>
                                         </div>
