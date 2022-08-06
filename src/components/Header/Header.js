@@ -35,7 +35,7 @@ const Header = () => {
                     <Navbar.Brand href="/home">Quiz</Navbar.Brand>
                     {
                         user ?
-                            <Button onClick={handleSignOut} variant="light">{user.displayName}--Logout</Button>
+                            <Button onClick={handleSignOut} variant="light">Logout ({user.displayName})</Button>
                             :
                             <Button onClick={handleNavigate} variant="light">LOGIN</Button>
                     }
