@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import useQuestions from '../../hooks/useQuestions';
 import '../Quizes/Quizes.css';
@@ -10,6 +11,8 @@ const Quizes = () => {
     const [score, setScore] = useState(0);
     const [clicked, setClicked] = useState(false);
     const [showScore, setShowScore] = useState(false);
+
+
 
 
     const handleCorrectAnswer = (isCorrect) => {
@@ -28,6 +31,8 @@ const Quizes = () => {
         }
     }
 
+
+
     return (
         <>
             {loading && <div>Loading..</div>}
@@ -38,7 +43,8 @@ const Quizes = () => {
                         {showScore ? (
                             <div >
                                 <div className="completed">Completed!</div>
-                                <div className="score-section">Your Score: {score}/{questions.length}</div>
+                                <div className="score-section">Your Score is: {score} out of {questions.length}</div>
+
                             </div>
                         ) : (
                             <div>

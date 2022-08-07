@@ -74,7 +74,7 @@
 }
 
 .next-button {
-    width: 50%;
+
     font-size: 24px;
     padding: 5px;
     display: flex;
@@ -125,4 +125,18 @@ button:focus {
 
 .correct {
     background-color: green;
+}
+
+.updateMarks {
+
+    font-size: 20px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    background-color: #161516;
+    border-radius: 15px;
+    border: 3px solid #ffffff;
+    cursor: pointer;
+    margin: 30px auto;
 }

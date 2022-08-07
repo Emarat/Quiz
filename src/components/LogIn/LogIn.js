@@ -23,7 +23,7 @@ const LogIn = () => {
 
                 const user = userCredential.user;
                 console.log(user);
-                navigate('/home');
+                navigate('/');
 
             })
 

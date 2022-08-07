@@ -51,7 +51,7 @@ const SignUp = () => {
             displayName: name
         }).then(() => {
             console.log('updating');
-            navigate('/home');
+            navigate('/');
         })
 
 
